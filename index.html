@@ -10,7 +10,6 @@
       background: #f0f2f5;
     }
 
-    /* NAVBAR */
     .navbar {
       background: #111;
       padding: 15px;
@@ -21,14 +20,8 @@
       color: white;
       margin: 15px;
       text-decoration: none;
-      font-size: 18px;
     }
 
-    .navbar a:hover {
-      color: #00adb5;
-    }
-
-    /* HOME */
     .home {
       text-align: center;
       padding: 60px;
@@ -36,8 +29,11 @@
       color: white;
     }
 
-    .home h1 {
-      font-size: 40px;
+    .home img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid white;
     }
 
     .btn {
@@ -47,10 +43,9 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      margin-top: 10px;
+      margin: 10px;
     }
 
-    /* SECTION */
     .section {
       padding: 40px;
       text-align: center;
@@ -65,7 +60,6 @@
       box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
     }
 
-    /* PROJECT CARDS */
     .projects {
       display: flex;
       justify-content: center;
@@ -81,10 +75,6 @@
       box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
     }
 
-    .card:hover {
-      transform: scale(1.05);
-    }
-
   </style>
 </head>
 
@@ -93,56 +83,56 @@
   <!-- NAVBAR -->
   <div class="navbar">
     <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Skills</a>
-    <a href="#">Projects</a>
-    <a href="#">Contact</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
   </div>
 
   <!-- HOME -->
   <div class="home">
+    <img src="profile.jpg" alt="profile">
     <h1>Hello, I'm Pravallika 👋</h1>
     <h3>Frontend Developer</h3>
-    <button class="btn">Download Resume</button>
+
+    <!-- Resume Button -->
+    <a href="resume.pdf" download>
+      <button class="btn">Download Resume</button>
+    </a>
+
   </div>
 
   <!-- ABOUT -->
-  <div class="section box">
+  <div id="about" class="section box">
     <h2>About Me</h2>
-    <p>I am a passionate frontend developer with knowledge in HTML, CSS, JavaScript.</p>
-  </div>
-
-  <!-- SKILLS -->
-  <div class="section box">
-    <h2>My Skills</h2>
-    <p>HTML </p>
-    <p>CSS </p>
-    <p>JavaScript </p>
+    <p>I am a frontend developer skilled in HTML, CSS, JavaScript. I love building responsive websites.</p>
   </div>
 
   <!-- PROJECTS -->
-  <div class="section">
+  <div id="projects" class="section">
     <h2>My Projects</h2>
 
     <div class="projects">
 
       <div class="card">
         <h3>Portfolio Website</h3>
-        <p>My personal portfolio using HTML & CSS</p>
-        <button class="btn">View</button>
+        <p>My personal portfolio project</p>
+
+        <!-- GitHub link -->
+        <a href="https://github.com/srisai-pravallikatrimalasetty-boop/my-second-project" target="_blank">
+          <button class="btn">View Code</button>
+        </a>
       </div>
 
       <div class="card">
         <h3>Coming Soon</h3>
-        <p>More projects coming...</p>
-        <button class="btn">View</button>
+        <p>More projects soon</p>
       </div>
 
     </div>
   </div>
 
   <!-- CONTACT -->
-  <div class="section box">
+  <div id="contact" class="section box">
     <h2>Contact</h2>
     <p>Email: srisaipravallikatirumalasetty@gmail.com</p>
   </div>
