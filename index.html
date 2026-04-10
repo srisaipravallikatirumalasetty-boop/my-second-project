@@ -7,7 +7,12 @@
     body {
       margin: 0;
       font-family: Arial;
-      background: #f0f2f5;
+      transition: 0.3s;
+    }
+
+    .dark {
+      background: #121212;
+      color: white;
     }
 
     .navbar {
@@ -27,13 +32,12 @@
       padding: 60px;
       background: linear-gradient(to right, #00adb5, #393e46);
       color: white;
+      animation: fadeIn 2s;
     }
 
     .home img {
       width: 120px;
-      height: 120px;
       border-radius: 50%;
-      border: 3px solid white;
     }
 
     .btn {
@@ -41,9 +45,8 @@
       color: white;
       padding: 10px 20px;
       border: none;
-      border-radius: 5px;
-      cursor: pointer;
       margin: 10px;
+      cursor: pointer;
     }
 
     .section {
@@ -51,28 +54,27 @@
       text-align: center;
     }
 
-    .box {
-      background: white;
-      padding: 20px;
-      margin: 20px auto;
-      width: 80%;
-      border-radius: 10px;
-      box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
-    }
-
-    .projects {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
     .card {
       background: white;
-      width: 250px;
-      margin: 15px;
+      margin: 20px;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
+      display: inline-block;
+      width: 250px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .dark .card {
+      background: #1e1e1e;
+    }
+
+    @keyframes fadeIn {
+      from {opacity:0;}
+      to {opacity:1;}
     }
 
   </style>
@@ -83,59 +85,62 @@
   <!-- NAVBAR -->
   <div class="navbar">
     <a href="#">Home</a>
-    <a href="#about">About</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
+    <button onclick="toggleMode()" class="btn"> Mode</button>
   </div>
 
   <!-- HOME -->
   <div class="home">
-    <img src="profile.jpg" alt="profile">
-    <h1>Hello, I'm Pravallika 👋</h1>
+    <img src="profile.jpg">
+    <h1>Hello, I'm Pravallika </h1>
     <h3>Frontend Developer</h3>
 
-    <!-- Resume Button -->
     <a href="resume.pdf" download>
       <button class="btn">Download Resume</button>
     </a>
 
-  </div>
+    <br>
 
-  <!-- ABOUT -->
-  <div id="about" class="section box">
-    <h2>About Me</h2>
-    <p>I am a frontend developer skilled in HTML, CSS, JavaScript. I love building responsive websites.</p>
+    <!-- Social Links -->
+    <a href="https://github.com/srisai-pravallika-tirumalasetty-boop" target="_blank">
+      <button class="btn">GitHub</button>
+    </a>
+
+    <a href="https://linkedin.com" target="_blank">
+      <button class="btn">LinkedIn</button>
+    </a>
+
   </div>
 
   <!-- PROJECTS -->
   <div id="projects" class="section">
     <h2>My Projects</h2>
 
-    <div class="projects">
-
-      <div class="card">
-        <h3>Portfolio Website</h3>
-        <p>My personal portfolio project</p>
-
-        <!-- GitHub link -->
-        <a href="https://github.com/srisai-pravallikatrimalasetty-boop/my-second-project" target="_blank">
-          <button class="btn">View Code</button>
-        </a>
-      </div>
-
-      <div class="card">
-        <h3>Coming Soon</h3>
-        <p>More projects soon</p>
-      </div>
-
+    <div class="card">
+      <h3>Portfolio Website</h3>
+      <p>My personal portfolio</p>
     </div>
+
+    <div class="card">
+      <h3>Todo App</h3>
+      <p>Coming soon</p>
+    </div>
+
   </div>
 
   <!-- CONTACT -->
-  <div id="contact" class="section box">
+  <div id="contact" class="section">
     <h2>Contact</h2>
-    <p>Email: srisaipravallikatirumalasetty@gmail.com</p>
+    <p>Email: srisaipravallika@gmail.com</p>
   </div>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("dark");
+    }
+  </script>
 
 </body>
 </html>
