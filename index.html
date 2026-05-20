@@ -1,80 +1,318 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Pravallika Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pravallika | Frontend Developer</title>
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    body {
-      margin: 0;
-      font-family: Arial;
-      transition: 0.3s;
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
     }
 
-    .dark {
-      background: #121212;
-      color: white;
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#0f172a;
+      color:white;
+      transition:0.4s;
     }
 
-    .navbar {
-      background: #111;
-      padding: 15px;
-      text-align: center;
+    /* NAVBAR */
+
+    nav{
+      width:100%;
+      padding:20px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:fixed;
+      top:0;
+      z-index:1000;
+      background:rgba(15,23,42,0.8);
+      backdrop-filter:blur(10px);
     }
 
-    .navbar a {
-      color: white;
-      margin: 15px;
-      text-decoration: none;
+    .logo{
+      font-size:28px;
+      font-weight:700;
+      color:#38bdf8;
     }
 
-    .home {
-      text-align: center;
-      padding: 60px;
-      background: linear-gradient(to right, #00adb5, #393e46);
-      color: white;
-      animation: fadeIn 2s;
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:30px;
     }
 
-    .home img {
-      width: 120px;
-      border-radius: 50%;
+    nav ul li a{
+      text-decoration:none;
+      color:white;
+      font-size:16px;
+      transition:0.3s;
     }
 
-    .btn {
-      background: #ff5722;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      margin: 10px;
-      cursor: pointer;
+    nav ul li a:hover{
+      color:#38bdf8;
     }
 
-    .section {
-      padding: 40px;
-      text-align: center;
+    .theme-btn{
+      background:#38bdf8;
+      border:none;
+      color:white;
+      padding:10px 18px;
+      border-radius:30px;
+      cursor:pointer;
+      font-weight:600;
     }
 
-    .card {
-      background: white;
-      margin: 20px;
-      padding: 20px;
-      border-radius: 10px;
-      display: inline-block;
-      width: 250px;
-      transition: 0.3s;
+    /* HERO SECTION */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:120px 8%;
+      gap:60px;
+      flex-wrap:wrap;
     }
 
-    .card:hover {
-      transform: scale(1.05);
+    .hero-text{
+      flex:1;
     }
 
-    .dark .card {
-      background: #1e1e1e;
+    .hero-text h3{
+      font-size:24px;
+      color:#38bdf8;
     }
 
-    @keyframes fadeIn {
-      from {opacity:0;}
-      to {opacity:1;}
+    .hero-text h1{
+      font-size:60px;
+      margin:10px 0;
+    }
+
+    .hero-text p{
+      max-width:550px;
+      line-height:1.8;
+      color:#cbd5e1;
+      margin-bottom:25px;
+    }
+
+    .buttons{
+      display:flex;
+      gap:15px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:12px 24px;
+      border:none;
+      border-radius:30px;
+      cursor:pointer;
+      font-weight:600;
+      transition:0.3s;
+      text-decoration:none;
+    }
+
+    .primary-btn{
+      background:#38bdf8;
+      color:white;
+    }
+
+    .secondary-btn{
+      border:2px solid #38bdf8;
+      color:#38bdf8;
+      background:transparent;
+    }
+
+    .btn:hover{
+      transform:translateY(-3px);
+    }
+
+    .social-icons{
+      margin-top:30px;
+      display:flex;
+      gap:20px;
+    }
+
+    .social-icons a{
+      color:white;
+      font-size:22px;
+      transition:0.3s;
+    }
+
+    .social-icons a:hover{
+      color:#38bdf8;
+      transform:scale(1.2);
+    }
+
+    .hero-image{
+      flex:1;
+      display:flex;
+      justify-content:center;
+    }
+
+    .hero-image img{
+      width:320px;
+      border-radius:50%;
+      border:5px solid #38bdf8;
+      box-shadow:0 0 40px rgba(56,189,248,0.5);
+      animation:float 3s ease-in-out infinite;
+    }
+
+    @keyframes float{
+      0%{
+        transform:translateY(0px);
+      }
+      50%{
+        transform:translateY(-15px);
+      }
+      100%{
+        transform:translateY(0px);
+      }
+    }
+
+    /* SECTION */
+
+    section{
+      padding:100px 8%;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:40px;
+      margin-bottom:60px;
+      color:#38bdf8;
+    }
+
+    /* CARDS */
+
+    .card-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:#1e293b;
+      padding:30px;
+      border-radius:20px;
+      transition:0.4s;
+      box-shadow:0 5px 20px rgba(0,0,0,0.2);
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 10px 30px rgba(56,189,248,0.4);
+    }
+
+    .card i{
+      font-size:40px;
+      color:#38bdf8;
+      margin-bottom:20px;
+    }
+
+    .card h3{
+      margin-bottom:15px;
+    }
+
+    .card p{
+      color:#cbd5e1;
+      line-height:1.7;
+    }
+
+    /* CONTACT */
+
+    .contact-box{
+      max-width:700px;
+      margin:auto;
+      background:#1e293b;
+      padding:40px;
+      border-radius:20px;
+    }
+
+    .contact-box input,
+    .contact-box textarea{
+      width:100%;
+      padding:15px;
+      margin:12px 0;
+      border:none;
+      border-radius:10px;
+      outline:none;
+      background:#334155;
+      color:white;
+    }
+
+    .contact-box button{
+      width:100%;
+    }
+
+    /* FOOTER */
+
+    footer{
+      text-align:center;
+      padding:25px;
+      background:#020617;
+      color:#94a3b8;
+    }
+
+    /* DARK MODE */
+
+    .light-mode{
+      background:#f8fafc;
+      color:#0f172a;
+    }
+
+    .light-mode nav{
+      background:rgba(255,255,255,0.8);
+    }
+
+    .light-mode nav ul li a{
+      color:#0f172a;
+    }
+
+    .light-mode .card,
+    .light-mode .contact-box{
+      background:white;
+      color:#0f172a;
+    }
+
+    .light-mode .card p{
+      color:#475569;
+    }
+
+    .light-mode input,
+    .light-mode textarea{
+      background:#e2e8f0;
+      color:#0f172a;
+    }
+
+    .light-mode .social-icons a{
+      color:#0f172a;
+    }
+
+    @media(max-width:768px){
+
+      .hero-text h1{
+        font-size:40px;
+      }
+
+      nav ul{
+        display:none;
+      }
+
     }
 
   </style>
@@ -83,63 +321,173 @@
 <body>
 
   <!-- NAVBAR -->
-  <div class="navbar">
-    <a href="#">Home</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-    <button onclick="toggleMode()" class="btn"> Mode</button>
-  </div>
 
-  <!-- HOME -->
-  <div class="home">
-    <img src="profile.jpg">
-    <h1>Hello, I'm Pravallika </h1>
-    <h3>Frontend Developer</h3>
+  <nav>
+    <div class="logo">Pravallika.</div>
 
-    <a href="resume.pdf" download>
-      <button class="btn">Download Resume</button>
-    </a>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
 
-    <br>
+    <button class="theme-btn" onclick="toggleTheme()">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+  </nav>
 
-    <!-- Social Links -->
-    <a href="https://github.com/srisai-pravallika-tirumalasetty-boop" target="_blank">
-      <button class="btn">GitHub</button>
-    </a>
+  <!-- HERO -->
 
-    <a href="https://linkedin.com" target="_blank">
-      <button class="btn">LinkedIn</button>
-    </a>
+  <section class="hero" id="home">
 
-  </div>
+    <div class="hero-text">
+      <h3>Hello, I'm</h3>
+      <h1>Pravallika</h1>
+
+      <p>
+        A passionate Frontend Developer focused on creating beautiful,
+        responsive and user-friendly websites using HTML, CSS and JavaScript.
+      </p>
+
+      <div class="buttons">
+
+        <a href="resume.pdf" download class="btn primary-btn">
+          Download Resume
+        </a>
+
+        <a href="#contact" class="btn secondary-btn">
+          Contact Me
+        </a>
+
+      </div>
+
+      <div class="social-icons">
+
+        <a href="https://github.com/srisai-pravallika-tirumalasetty-boop" target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+
+        <a href="https://linkedin.com" target="_blank">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+
+        <a href="mailto:srisaipravallika@gmail.com">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="profile.jpg" alt="profile">
+    </div>
+
+  </section>
+
+  <!-- SKILLS -->
+
+  <section id="skills">
+
+    <h2 class="section-title">My Skills</h2>
+
+    <div class="card-container">
+
+      <div class="card">
+        <i class="fa-brands fa-html5"></i>
+        <h3>HTML5</h3>
+        <p>Building structured and semantic web pages.</p>
+      </div>
+
+      <div class="card">
+        <i class="fa-brands fa-css3-alt"></i>
+        <h3>CSS3</h3>
+        <p>Creating modern responsive UI designs with animations.</p>
+      </div>
+
+      <div class="card">
+        <i class="fa-brands fa-js"></i>
+        <h3>JavaScript</h3>
+        <p>Adding dynamic and interactive functionality.</p>
+      </div>
+
+    </div>
+
+  </section>
 
   <!-- PROJECTS -->
-  <div id="projects" class="section">
-    <h2>My Projects</h2>
 
-    <div class="card">
-      <h3>Portfolio Website</h3>
-      <p>My personal portfolio</p>
+  <section id="projects">
+
+    <h2 class="section-title">Projects</h2>
+
+    <div class="card-container">
+
+      <div class="card">
+        <i class="fa-solid fa-laptop-code"></i>
+        <h3>Portfolio Website</h3>
+        <p>
+          A modern personal portfolio website with responsive design
+          and dark mode feature.
+        </p>
+      </div>
+
+      <div class="card">
+        <i class="fa-solid fa-list-check"></i>
+        <h3>Todo App</h3>
+        <p>
+          Task management application using JavaScript with local storage.
+        </p>
+      </div>
+
+      <div class="card">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <h3>E-Commerce UI</h3>
+        <p>
+          Responsive shopping website frontend with modern UI design.
+        </p>
+      </div>
+
     </div>
 
-    <div class="card">
-      <h3>Todo App</h3>
-      <p>Coming soon</p>
-    </div>
-
-  </div>
+  </section>
 
   <!-- CONTACT -->
-  <div id="contact" class="section">
-    <h2>Contact</h2>
-    <p>Email: srisaipravallika@gmail.com</p>
-  </div>
+
+  <section id="contact">
+
+    <h2 class="section-title">Contact Me</h2>
+
+    <div class="contact-box">
+
+      <input type="text" placeholder="Your Name">
+
+      <input type="email" placeholder="Your Email">
+
+      <textarea rows="6" placeholder="Your Message"></textarea>
+
+      <button class="btn primary-btn">
+        Send Message
+      </button>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 Pravallika | All Rights Reserved
+  </footer>
 
   <!-- JAVASCRIPT -->
+
   <script>
-    function toggleMode() {
-      document.body.classList.toggle("dark");
+
+    function toggleTheme(){
+      document.body.classList.toggle("light-mode");
     }
+
   </script>
 
 </body>
